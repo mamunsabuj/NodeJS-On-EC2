@@ -149,7 +149,7 @@ To start an application in Cluster mode
 sudo pm2 start app.js -i max
 ```
 
-refferences
+## Refferences
 
 https://www.youtube.com/watch?v=T-Pum2TraX4&t=17s
 https://www.youtube.com/watch?v=-Iw0aQtERmE
