@@ -148,3 +148,12 @@ To start an application in Cluster mode
 ```bash
 sudo pm2 start app.js -i max
 ```
+
+refferences
+
+https://www.youtube.com/watch?v=T-Pum2TraX4&t=17s
+https://www.youtube.com/watch?v=-Iw0aQtERmE
+https://www.youtube.com/watch?v=S45jZCvd2M8
+
+The Best Way to Install Node.js
+https://yoember.com/nodejs/the-best-way-to-install-node-js-with-yarn/
