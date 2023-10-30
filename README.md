@@ -253,3 +253,36 @@ mongodb://Your-EC2-Hostname:27017
 
 https://medium.com/@calvin.hsieh/steps-to-install-mongodb-on-aws-ec2-instance-62db66981218
 https://www.youtube.com/watch?v=Gz_7WMjv6sE&t=1s
+
+### Deploy Vue.js + Vuex Front-end app
+
+Follow these steps to setup the Vue.js application on the server.
+
+Clone or upload the Vue + Vuex project into the your EC2
+
+Install NPM packagers
+
+```
+sudo npm install
+```
+
+Update the app to use real backend API:
+
+Open the index file of your vue js application in editor,
+Delete or replace or comment any delopment code lines in that file
+
+Configure the path to API:
+Configure your application live node js API in .env file
+
+Build the front end app with the command
+
+```
+sudo npm run build
+```
+
+The Vue.js app is now built and ready to be served from the project directory,
+
+
+### Vue js referrences
+
+https://jasonwatmore.com/post/2019/12/14/vuejs-nodejs-on-aws-how-to-deploy-a-mevn-stack-app-to-amazon-ec2
