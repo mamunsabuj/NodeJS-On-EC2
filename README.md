@@ -252,3 +252,4 @@ mongodb://Your-EC2-Hostname:27017
 ## MongoDB Referrence
 
 https://medium.com/@calvin.hsieh/steps-to-install-mongodb-on-aws-ec2-instance-62db66981218
+https://www.youtube.com/watch?v=Gz_7WMjv6sE&t=1s
