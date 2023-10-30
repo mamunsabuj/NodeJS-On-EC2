@@ -157,3 +157,98 @@ sudo pm2 start app.js -i max
 
 The Best Way to Install Node.js
 https://yoember.com/nodejs/the-best-way-to-install-node-js-with-yarn/
+
+# Install MongoDB in EC2
+
+login as root user
+
+```
+sudo su - root
+```
+
+For MongoDB 3.0, create below file using vi or any other editor
+
+```bash
+sudo vi /etc/yum.repos.d/mongodb-org-4.0.repo
+```
+
+Copy/paste the following to repo file
+
+```bash
+[mongodb-org-4.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/4.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
+```
+
+Install MongoDB packages
+
+```
+sudo yum -y install mongodb-org
+```
+
+Check you have MongoDB installed properly
+
+```
+which mongo  # should print /usr/bin/mongo
+```
+
+Start MongoDB server
+
+```
+sudo service mongod start
+```
+
+Check MongoDB status
+
+```
+sudo service mongod status
+```
+
+#### MongoDB Configuration
+
+Update MongoDB config
+
+```
+sudo vi /etc/mongod.conf
+```
+
+Find the network interface and update the port and bindIp by 27017 port and 0.0.0.0 .
+after configuration setup restart MongoDB
+
+```
+sudo service mongod restart
+```
+
+#### Create MongoDB User
+
+Connect to MongoDB
+
+```
+mongo
+```
+
+Create a root user
+
+```
+use admin
+db.createUser({ user: "admin", pwd: "password", roles: ["root"] })
+```
+
+MongoDB Setup process done.
+
+Please don't forget to add 27017 port from 0.0.0.0/0 in instance's Inbound Rule.
+
+Now can can connect to the mongoDB by using MongoDB Compass from your local pc. Download MongoDB Compass from https://www.mongodb.com/products/tools/compass
+
+MongoDB connection string will be similar as
+
+```
+mongodb://Your-EC2-Hostname:27017
+```
+
+## MongoDB Referrence
+
+https://medium.com/@calvin.hsieh/steps-to-install-mongodb-on-aws-ec2-instance-62db66981218
